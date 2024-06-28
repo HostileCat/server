@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="form-container">
+    <h1>Formulario de Registro</h1>
+    <form id="form" action="#" method="post">
+      <div class="form-group">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" name="apellido" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="tipoDocumento">Tipo de Documento:</label>
+        <select id="tipoDocumento" name="tipoDocumento" required>
+          <option value="" disabled selected>Seleccione el tipo de documento</option>
+          
+        </select>
+      </div>
+  
+      <div class="form-group">
+        <label for="documento">Documento:</label>
+        <input type="text" id="documento" name="documento" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="correo">Correo Electrónico:</label>
+        <input type="email" id="correo" name="correo" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="direccion">Dirección:</label>
+        <input type="text" id="direccion" name="direccion" required></input>
+      </div>
+  
+      <div class="form-group">
+        <input type="submit" value="Registrar">
+      </div>
+    </form>
+    
+  </div>
+
+  <div class="user-list">
+    <h2>Usuarios Registrados</h2>
+    <table id="tablaUsuarios">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Tipo de Documento</th>
+          <th>Documento</th>
+          <th>Correo Electrónico</th>
+          <th>Dirección</th>
+        </tr>
+      </thead>
+      <tbody id="cuerpo">
+        <!-- Los usuarios registrados se insertarán aquí -->
+      </tbody>
+    </table>
+  </div>
+
+  <div>
+    <h3>Eliminar Usuario</h3>
+    <input type="text" id="idEliminar" placeholder="Ingrese el ID del usuario">
+    <button id="btnEliminar">Eliminar Usuario</button>
+  </div>
+
+
+  <script src="app.js" type="module"></script>
+</body>
+</html>

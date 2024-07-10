@@ -1,34 +1,80 @@
-
 body {
   font-family: Arial, sans-serif;
-  margin: 50px;
+  margin: 0;
+  padding: 0;
   background-color: #add5ff;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  min-height: 100vh; /* Altura mínima de la ventana */
 }
+
 .form-container {
   max-width: 500px;
-  margin: 0 auto;
+  margin: 20px; /* Espacio exterior para separar del borde de la ventana */
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
 }
+
+.user-list {
+  max-width: 800px;
+  margin: 20px; /* Espacio exterior para separar del borde de la ventana */
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  overflow-x: auto; /* Habilita el desplazamiento horizontal cuando sea necesario */
+}
+
+/* Ajuste adicional para la tabla */
+table {
+  width: auto; /* Ancho automático para adaptarse al contenido */
+  min-width: 100%; /* Ancho mínimo para asegurar que ocupe todo el espacio disponible */
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+td {
+  background-color: #ffffff;
+}
+
 .form-group {
   margin-bottom: 15px;
 }
+
 .form-group label {
   display: block;
   margin-bottom: 5px;
 }
-.form-group input, .form-group select, .form-group textarea {
-  width: 100%;
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: calc(100% - 16px); /* Ajuste para el padding de 8px en cada lado */
   padding: 8px;
   box-sizing: border-box;
 }
+
 .form-group input[type="submit"] {
   background-color: #007BFF;
   color: white;
   border: none;
   cursor: pointer;
 }
+
 .form-group input[type="submit"]:hover {
   background-color: #0056b3;
 }
@@ -38,17 +84,36 @@ table {
   border-collapse: collapse;
   margin-top: 20px;
 }
-th, td {
+
+th,
+td {
   border: 1px solid #ddd;
   padding: 8px;
   text-align: left;
 }
+
 th {
   background-color: #f2f2f2;
 }
-td{
+
+td {
   background-color: #ffffff;
 }
-.form-container, .user-list {
-  margin: 20px;
+
+.editButton,
+.deleteButton {
+  color: #ffffff;
+  border: none;
+  border-radius: 15px;
+  padding: 14px 24px;
+  width: 100%;
+}
+
+.editButton {
+  background-color: #3399FF;
+  margin-bottom: 10px;
+}
+
+.deleteButton {
+  background-color: #CC0000;
 }

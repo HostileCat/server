@@ -1,0 +1,59 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "nombre": "juan",
+      "apellido": "perez",
+      "documento": "123415412",
+      "tipo_doc": 1,
+      "correo": "asjkdioaj@gsf.com",
+      "direccion": "fesdfs"
+    },
+    {
+      "id": 2,
+      "nombre": "juan",
+      "apellido": "perez",
+      "documento": 3124124,
+      "tipo_doc": 2,
+      "correo": "asjkdioaj@gsf.com",
+      "direccion": "fesdfs"
+    },
+    {
+      "id": 3,
+      "nombre": "ftjftj",
+      "apellido": "fjfgjf",
+      "documento": 2222222,
+      "tipo_doc": 2,
+      "correo": "ftjmfgf@dgsg.com",
+      "direccion": "rhthrthtr"
+    },
+    {
+      "id": 5,
+      "nombre": "juan",
+      "apellido": "perez",
+      "documento": 3124124,
+      "tipo_doc": 2,
+      "correo": "asjkdioaj@gsf.com",
+      "direccion": "fesdfs"
+    },
+    {
+      "id": 6,
+      "nombre": "cajita",
+      "apellido": "Menú",
+      "documento": 3452,
+      "tipo_doc": 1,
+      "correo": "abel@gmail.com",
+      "direccion": "asffsaf"
+    }
+  ],
+  "docs": [
+    {
+      "id": 1,
+      "nombre": "Cédula"
+    },
+    {
+      "id": 2,
+      "nombre": "Tarjeta"
+    }
+  ]
+}

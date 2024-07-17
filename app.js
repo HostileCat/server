@@ -1,5 +1,8 @@
 import { fetchDocumentos, fetchUsuarios } from './module.js';
 
+
+
+
 async function database() {
   const documentos = await fetchDocumentos();
   const usuarios = await fetchUsuarios();
@@ -83,32 +86,124 @@ async function database() {
   let idUsuario = usuarios[usuarios.length - 1].id;  
     console.log(idUsuario)
 
+    const nombre = document.querySelector("#nombre");
+    const apellido = document.querySelector("#apellido")
+    const documento = document.querySelector("#documento")
+    const telefono = document.querySelector("#telefono")
+    const tipoDoc = document.querySelector("#tipoDocumento")
+    const correo = document.querySelector("#correo")
+    const direccion = document.querySelector("#direccion")
+
+    const regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    nombre.addEventListener("keypress",(event) =>{
+      let tipo = "nombre";
+      validarLetras(event, tipo);
+    })
+    apellido.addEventListener("keypress",(event) =>{
+      let tipo = "apellido";
+      validarLetras(event, tipo);
+    })
+    telefono.addEventListener("keypress",(event) =>{
+      let tipo = "telefono";
+      validarNumeros(event, tipo);
+    })
+    telefono.addEventListener("blur",(event) =>{
+      let tipo = "telefono";
+      cantidadNumeros(event, tipo);
+    })
+    documento.addEventListener("keypress",(event) =>{
+      let tipo = "documento";
+      validarNumeros(event, tipo);
+    })
+    documento.addEventListener("blur",(event) =>{
+      let tipo = "documento";
+      cantidadNumeros(event, tipo);
+    })
+
+    correo.addEventListener("blur", (event) =>{
+
+    })
+
+
+    const validarLetras = function(event, tipo) {
+      const regexLetras = /^[a-zA-ZñÑ\ ]{0,}$/
+
+      if (!(regexLetras.test(event.key))) {
+        event.preventDefault()
+      } 
+    }
+
+    const validarNumeros = function(event, tipo) {
+      const regexLetras = /^[\d]{0,}$/
+      
+      if (!(event.keyCode >= 48 && event.keyCode <= 57)) {
+        event.preventDefault()
+      } 
+
+      
+    }
+    
+    const cantidadNumeros = (event, tipo) =>{
+      if (tipo === "documento" ) {
+        //Se crea el mensaje de error
+        let mensajeError = document.createElement("span")
+        mensajeError.setAttribute("id", "errorDocumento")
+        mensajeError.setAttribute("class", "mensajeError")
+        mensajeError.textContent = "El documento debe tener entre 8 y 10 digitos"
+        const padre = documento.parentElement
+
+        let set = document.querySelector("#errorDocumento");
+        
+        if (documento.value.length >= 8 && documento.value.length <= 10) {
+          documento.classList.remove("incorrecto")
+          documento.classList.add("correcto")
+          if (set !== null) {
+            padre.removeChild(set)
+          }
+          
+
+        }else{
+          documento.classList.remove("correcto")
+          documento.classList.add("incorrecto")
+          if (set === null) {
+            padre.appendChild(mensajeError)
+          }
+        }
+        
+      }else if(tipo === "telefono"){
+
+        //Se crea el mensaje de error
+        let mensajeError = document.createElement("span")
+        mensajeError.setAttribute("id", "errorTelefono")
+        mensajeError.setAttribute("class", "mensajeError")
+        mensajeError.textContent = "El telefono debe tener 10 digitos"
+        const padre = telefono.parentElement
+
+        let set = document.querySelector("#errorTelefono");
+        
+        if (documento.value.length >= 8 && documento.value.length <= 10) {
+          documento.classList.remove("incorrecto")
+          documento.classList.add("correcto")
+          if (set !== null) {
+            padre.removeChild(set)
+          }
+          
+
+        }else{
+          documento.classList.remove("correcto")
+          documento.classList.add("incorrecto")
+          if (set === null) {
+            padre.appendChild(mensajeError)
+          }
+        }
+      }
+
+      
+    }
 
 
   const form = document.querySelector('#form');
-
-  // const validar = async(event) => {
-  //   event.preventDefault();
-  //   const data = {
-  //     nombre: document.querySelector("#nombre").value,
-  //     apellido: document.querySelector("#apellido").value,
-  //     tipoDocumento: document.querySelector("#tipoDocumento").value,  
-  //     documento: document.querySelector("#documento").value,
-  //     correo: document.querySelector("#correo").value,
-  //     direccion: document.querySelector("#direccion").value
-  //   }
-
-  //   await fetch("http://127.0.0.1:3000/users", {
-  //     method: "POST",
-  //     body: JSON.stringify(data),
-  //     headers: {
-  //       'Content-type': 'application/json; charset=UTF-8',
-  //     },
-  //   })
-  // }
-
-
-  // form.addEventListener("submit" , validar)
 
 
   //Agregar un evento submit al formulario
@@ -118,53 +213,8 @@ async function database() {
     event.preventDefault();
 
     //ingresar usuarios a la base de datos
-    const nombre = document.querySelector("#nombre").value.trim();
-    const apellido = document.querySelector("#apellido").value.trim();
-    const documento = document.querySelector("#documento").value.trim();
-    const tipoDoc = document.querySelector("#tipoDocumento").value;
-    const correo = document.querySelector("#correo").value.trim();
-    const direccion = document.querySelector("#direccion").value.trim();
+    
 
-    console.log(nombre)
-
-
-    const regexNombreApellido = /^[A-Za-zÁÉÍÓÚáéíóúÑñ]+$/;
-    const regexDocumento = /^[0-9]+$/;
-    const regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const regexDireccion = /^[A-Za-zÁÉÍÓÚáéíóúÑñ0-9\s]+$/;
-
-    // Mensajes de error
-    let mensajesError = [];
-
-    // Validar nombre
-    if (!regexNombreApellido.test(nombre)) {
-      mensajesError.push("El nombre debe contener solo letras y no debe tener espacios al inicio.");
-    }
-
-    // Validar apellido
-    if (!regexNombreApellido.test(apellido)) {
-      mensajesError.push("El apellido debe contener solo letras y no debe tener espacios al inicio.");
-    }
-
-    // Validar documento
-    if (!regexDocumento.test(documento)) {
-      mensajesError.push("El documento debe contener solo números y no debe tener espacios al inicio.");
-    }
-
-    // Validar tipo de documento
-    if (tipoDoc === "") {
-      mensajesError.push("Debe seleccionar un tipo de documento.");
-    }
-
-    // Validar correo
-    if (!regexCorreo.test(correo)) {
-      mensajesError.push("Debe ingresar un correo electrónico válido y no debe tener espacios al inicio.");
-    }
-
-    // Validar dirección
-    if (!regexDireccion.test(direccion)) {
-      mensajesError.push("La dirección debe contener solo letras, números y espacios, y no debe tener espacios al inicio.");
-    }
 
     
     let usuario = {};

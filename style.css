@@ -9,6 +9,10 @@ body {
   min-height: 100vh; /* Altura mínima de la ventana */
 }
 
+input:focus{
+  outline: none;
+}
+
 .form-container {
   max-width: 500px;
   margin: 20px; /* Espacio exterior para separar del borde de la ventana */
@@ -116,4 +120,19 @@ td {
 
 .deleteButton {
   background-color: #CC0000;
+}
+
+
+.correcto{
+  border: 1px solid green;
+}
+
+.incorrecto{
+  border: 1px solid #CC0000;
+}
+
+.mensajeError{
+  color: #CC0000;
+  font-size: 12px;
+  display: block;
 }

@@ -13,7 +13,11 @@ input:focus{
   outline: none;
 }
 
-.form-container {
+.form-title{
+  text-align: center;
+}
+
+.form-container, .modal-container{
   max-width: 500px;
   margin: 20px; /* Espacio exterior para separar del borde de la ventana */
   background-color: #ffffff;
@@ -135,4 +139,18 @@ td {
   color: #CC0000;
   font-size: 12px;
   display: block;
+}
+
+
+/* modal */
+
+.modal-container{
+  display: none;
+  position: absolute;
+  animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }

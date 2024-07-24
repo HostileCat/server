@@ -1,14 +1,34 @@
 {
   "users": [
     {
-      "id": 1,
-      "nombre": "juan",
-      "apellido": "perez",
-      "documento": "123415412",
+      "id": "1",
+      "nombre": "Jon",
+      "apellido": "Doe",
+      "telefono": 6019521325,
+      "documento": 1234567890,
       "tipo_doc": 1,
-      "telefono": "2134112",
-      "correo": "asjkdioaj@gsf.com",
-      "direccion": "fesdfs"
+      "correo": "test@example.us",
+      "direccion": "1600 Amphitheatre Parkway"
+    },
+    {
+      "id": "2",
+      "nombre": "João",
+      "apellido": "Souza Silva",
+      "telefono": 3121286800,
+      "documento": 1234567890,
+      "tipo_doc": 1,
+      "correo": "teste@exemplo.us",
+      "direccion": "Av. dos Andradas, 3000"
+    },
+    {
+      "id": "3",
+      "nombre": "Juan Francisco",
+      "apellido": "García Flores",
+      "telefono": 5553428400,
+      "documento": 1234567890,
+      "tipo_doc": 2,
+      "correo": "ejemplo@ejemplo.mx",
+      "direccion": "C. Montes Urales 445"
     }
   ],
   "docs": [

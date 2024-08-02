@@ -2,26 +2,16 @@
   "users": [
     {
       "id": "1",
-      "nombre": "Jon",
-      "apellido": "Doe",
-      "telefono": 6019521325,
+      "nombre": "Juan Francisco",
+      "apellido": "García Flores",
+      "telefono": 5553428400,
       "documento": 1234567890,
       "tipo_doc": 1,
-      "correo": "test@example.us",
-      "direccion": "1600 Amphitheatre Parkway"
+      "correo": "ejemplo@ejemplo.mx",
+      "direccion": "C. Montes Urales 445"
     },
     {
       "id": "2",
-      "nombre": "João",
-      "apellido": "Souza Silva",
-      "telefono": 3121286800,
-      "documento": 1234567890,
-      "tipo_doc": 1,
-      "correo": "teste@exemplo.us",
-      "direccion": "Av. dos Andradas, 3000"
-    },
-    {
-      "id": "3",
       "nombre": "Juan Francisco",
       "apellido": "García Flores",
       "telefono": 5553428400,
@@ -29,6 +19,16 @@
       "tipo_doc": 2,
       "correo": "ejemplo@ejemplo.mx",
       "direccion": "C. Montes Urales 445"
+    },
+    {
+      "id": "3",
+      "nombre": "qwe",
+      "apellido": "qwe",
+      "telefono": 1234567899,
+      "documento": 1234567890,
+      "tipo_doc": 1,
+      "correo": "dada@gmai.com",
+      "direccion": "fsr1242"
     }
   ],
   "docs": [

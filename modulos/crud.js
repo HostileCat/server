@@ -1,5 +1,4 @@
 const agregarUsuario = function(usuarios) {
-    const form = document.querySelector('#form');
     let errorExistente = document.querySelector("#errorCorreo");
 
     const nombre = document.querySelector("#nombre");
@@ -10,10 +9,9 @@ const agregarUsuario = function(usuarios) {
     const correo = document.querySelector("#correo");
     const direccion = document.querySelector("#direccion");
     
-    form.addEventListener('submit', function (event) {
-        // Prevenir el comportamiento por defecto del formulario (evitar recarga)
+    
         
-        event.preventDefault();
+       
     
         //ingresar usuarios a la base de datos
         
@@ -24,7 +22,8 @@ const agregarUsuario = function(usuarios) {
         } else{
           idUsuario = idUsuario.id;
         }
-        console.log(idUsuario)
+
+        
     
         
         let usuario = {};
@@ -45,7 +44,7 @@ const agregarUsuario = function(usuarios) {
             body: JSON.stringify(usuario)
           })
         } 
-    })
+    
 }
 
 const eliminarUsuario = function(listaEliminar) {

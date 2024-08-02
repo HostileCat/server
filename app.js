@@ -3,13 +3,20 @@ import { tipoDocumento } from './modulos/select.js';
 import { listarUsuarios } from './modulos/tabla.js';
 import * as validation from './modulos/validation.js';
 import * as crud from './modulos/crud.js'
+import { campoVacio } from './modulos/validateSubmit.js';
+import { submitDisable } from './modulos/submitDisable.js'; 
+
+
 
 
 async function database() {
   const documentos = await fetchDocumentos();
   const usuarios = await fetchUsuarios();
+  
+
   console.log(documentos);
   console.log(usuarios);
+  
 
   // ingresar opciones de documentos en el select
   const listaDoc = tipoDocumento(documentos);
@@ -77,9 +84,32 @@ async function database() {
     })
 
 
+  
+
+
+    submitDisable()
+
+    
+
+    const form = document.querySelector("#form");
+
+    const submit = document.querySelector("#submit");
+
+    form.addEventListener("submit", (event) =>{
+      
+
+      let response = campoVacio(event, "form [required]");
+      
+      if (response) {
+        console.log("bien")
+        crud.agregarUsuario(usuarios);
+      } 
+    })
+
+
     
   
-  crud.agregarUsuario(usuarios);
+  
 
   
   const listaEliminar = document.querySelectorAll("#deleteButton");

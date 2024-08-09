@@ -1,0 +1,44 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "nombre": "Juan Francisco",
+      "apellido": "García Flores",
+      "telefono": 5553428400,
+      "documento": 1234567890,
+      "tipo_doc": "1",
+      "correo": "ejemplo@ejemplo.mx",
+      "direccion": "C. Montes Urales 445"
+    },
+    {
+      "id": "2",
+      "nombre": "Juan Francisco",
+      "apellido": "García Flores",
+      "telefono": 5553428400,
+      "documento": 1234567890,
+      "tipo_doc": "1",
+      "correo": "ejemplo@ejemplo.mx",
+      "direccion": "C. Montes Urales 445"
+    },
+    {
+      "id": "2",
+      "nombre": "Juan Francisco",
+      "apellido": "García Flores",
+      "telefono": 5553428400,
+      "documento": 1234567890,
+      "tipo_doc": "1",
+      "correo": "ejemplo@ejemplo.mx",
+      "direccion": "C. Montes Urales 445"
+    }
+  ],
+  "docs": [
+    {
+      "id": "1",
+      "nombre": "Cédula"
+    },
+    {
+      "id": "2",
+      "nombre": "Tarjeta"
+    }
+  ]
+}
